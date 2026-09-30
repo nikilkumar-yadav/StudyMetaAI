@@ -1,4 +1,4 @@
-const API = "";
+const API = "https://studymetaai-2.onrender.com";
 
 const state = {
   currentChatId: null,
