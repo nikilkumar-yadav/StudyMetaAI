@@ -879,23 +879,16 @@ signupForm.addEventListener(
                CALL FASTAPI
             ================================= */
 
-            const response =
-                await fetch(
-                    "https://studymetaai-2.onrender.com/api/signup",
-                    {
-                        method: "POST",
-
-                        headers: {
-                            "Content-Type":
-                                "application/json"
-                        },
-
-                        body:
-                            JSON.stringify(
-                                payload
-                            )
-                    }
-                );
+        const response = await fetch(
+    "https://studymetaai-2.onrender.com/api/signup",
+    {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload)
+    }
+);
 
 
             /* =================================
