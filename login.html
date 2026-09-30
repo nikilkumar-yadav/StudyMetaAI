@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StudyMetaAI | Login</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background: #111827;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .container {
+            width: 950px;
+            min-height: 560px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background: #1f2937;
+            border: 1px solid #374151;
+            border-radius: 25px;
+            overflow: hidden;
+        }
+
+        /* LEFT SIDE */
+
+        .left {
+            padding: 55px;
+            background: linear-gradient(135deg, #303b60, #24364c);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 45px;
+        }
+
+        .logo {
+            width: 55px;
+            height: 55px;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 26px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea, #20c9b5);
+        }
+
+        .brand-name {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .badge {
+            display: inline-block;
+            width: fit-content;
+            padding: 10px 18px;
+            border: 1px solid #667eea;
+            border-radius: 25px;
+            color: #c4c9ff;
+            font-size: 13px;
+            margin-bottom: 25px;
+        }
+
+        .left h1 {
+            font-size: 46px;
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .gradient {
+            background: linear-gradient(90deg, #7585ff, #25c8bd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .left p {
+            color: #c7ced9;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* RIGHT SIDE */
+
+        .right {
+            padding: 55px 65px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .right h2 {
+            font-size: 34px;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            color: #b8c0cc;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        input {
+            width: 100%;
+            height: 50px;
+            padding: 0 16px;
+            border-radius: 12px;
+            border: 1px solid #3b4b61;
+            background: #151e2c;
+            color: white;
+            font-size: 16px;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #667eea;
+        }
+
+        .password-box {
+            position: relative;
+        }
+
+        .eye {
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            cursor: pointer;
+        }
+
+        button {
+            width: 100%;
+            height: 52px;
+            border: none;
+            border-radius: 12px;
+            color: white;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            background: linear-gradient(90deg, #6268e8, #25bdb2);
+            margin-top: 10px;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        #message {
+            text-align: center;
+            margin-top: 15px;
+            min-height: 20px;
+        }
+
+        .signup-link {
+            text-align: center;
+            margin-top: 20px;
+            color:  #b8c0cc;
+        }
+
+        .signup-link a {
+            color: #8da2ff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        @media(max-width: 800px) {
+
+            body {
+                padding: 20px;
+            }
+
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .left,
+            .right {
+                padding: 40px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <div class="container">
+
+        <!-- LEFT SIDE -->
+
+        <div class="left">
+
+            <div class="brand">
+
+                <div class="logo">N</div>
+
+                <div class="brand-name">
+                    StudyMetaAI
+                </div>
+
+            </div>
+
+            <div class="badge">
+                ✦ AI POWERED LEARNING PLATFORM
+            </div>
+
+            <h1>
+                Welcome Back to<br>
+                <span class="gradient">
+                    StudyMetaAI.
+                </span>
+            </h1>
+
+            <p>
+                Login to continue learning, coding,
+                solving problems and building amazing
+                projects with AI.
+            </p>
+
+        </div>
+
+
+        <!-- RIGHT SIDE -->
+
+        <div class="right">
+
+            <h2>Welcome Back 👋</h2>
+
+            <p class="subtitle">
+                Login to your StudyMetaAI account.
+            </p>
+
+
+            <form id="loginForm">
+
+                <div class="form-group">
+
+                    <label>Email Address</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Password</label>
+
+                    <div class="password-box">
+
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Enter your password"
+                            required
+                        >
+
+                        <span
+                            class="eye"
+                            onclick="togglePassword()"
+                        >
+                            👁
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <button type="submit">
+                    Login
+                </button>
+
+
+                <div id="message"></div>
+
+
+                <div class="signup-link">
+
+                    Don't have an account?
+
+                    <a href="signup.html">
+                        Create Account
+                    </a>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script>
+function togglePassword() {
+    const password = document.getElementById("password");
+    password.type = password.type === "password" ? "text" : "password";
+}
+
+const loginForm = document.getElementById("loginForm");
+loginForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const message = document.getElementById("message");
+    const button = loginForm.querySelector("button[type='submit']");
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value;
+
+    button.disabled = true;
+    button.textContent = "Signing in...";
+    message.textContent = "";
+
+    try {
+        const response = await fetch("/api/login", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({email, password})
+        });
+
+        const data = await response.json().catch(() => ({}));
+        if (!response.ok) throw new Error(data.detail || "Login failed.");
+
+        localStorage.setItem("studyMetaUser", JSON.stringify(data.user));
+        message.style.color = "#35d07f";
+        message.textContent = "Login successful! Opening StudyMetaAI...";
+
+        setTimeout(() => {
+            window.location.href = "/chat";
+        }, 500);
+    } catch (error) {
+        message.style.color = "#ff6b6b";
+        message.textContent = error.message;
+    } finally {
+        button.disabled = false;
+        button.textContent = "Login";
+    }
+});
+</script>
+</body>
+</html>

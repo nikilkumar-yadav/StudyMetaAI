@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="StudyMetaAI - Professional AI Study Assistant"
+    >
+
+    <title>StudyMetaAI - AI Study Assistant</title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/style.css?v=4">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-top">
+
+            <a
+                class="brand"
+                href="/chat"
+                aria-label="StudyMetaAI"
+            >
+
+           <span class="mode-logo">
+                𝐀𝐈
+            </span>
+
+                <span>
+                    <strong>StudyMetaAI</strong>
+                    <small>AI Study Assistant</small>
+                </span>
+
+            </a>
+            
+
+            <button
+                class="icon-btn mobile-close"
+                id="closeSidebar"
+                aria-label="Close sidebar"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="sidebar-body">
+
+            <!-- New Chat -->
+
+            <button
+                class="new-chat"
+                id="newChatBtn"
+            >
+
+                <span class="new-chat-plus">
+                    ＋
+                </span>
+
+                <span>
+                    New chat
+                </span>
+
+                <kbd>
+                    Ctrl K
+                </kbd>
+
+            </button>
+
+
+            <!-- Navigation -->
+
+            <nav
+                class="nav"
+                aria-label="Main navigation"
+            >
+
+                <button
+                    class="nav-btn"
+                    id="searchChatsBtn"
+                >
+
+                    <span class="nav-icon">
+                        ⌕
+                    </span>
+
+                    <span>
+                        Search chats
+                    </span>
+
+                    <kbd>
+                        Ctrl /
+                    </kbd>
+
+                </button>
+
+
+                <button
+                    class="nav-btn"
+                    id="libraryBtn"
+                >
+
+                    <span class="nav-icon">
+                        ▤
+                    </span>
+
+                    <span>
+                        Library
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="nav-btn"
+                    id="projectsBtn"
+                >
+
+                    <span class="nav-icon">
+                        □
+                    </span>
+
+                    <span>
+                        Projects
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="nav-btn"
+                    id="scheduleBtn"
+                >
+
+                    <span class="nav-icon">
+                        ◷
+                    </span>
+
+                    <span>
+                        Scheduled
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="nav-btn"
+                    id="pluginsBtn"
+                >
+
+                    <span class="nav-icon">
+                        ◇
+                    </span>
+
+                    <span>
+                        Plugins
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="nav-btn"
+                    id="codingBtn"
+                >
+
+                    <span class="nav-icon">
+                        &lt;/&gt;
+                    </span>
+
+                    <span>
+                        Coding Lab
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="nav-btn"
+                    id="moreBtn"
+                >
+
+                    <span class="nav-icon">
+                        •••
+                    </span>
+
+                    <span>
+                        More
+                    </span>
+
+                </button>
+
+            </nav>
+
+
+            <!-- Recent Chats -->
+
+            <div class="recent-head">
+
+                <span>
+                    Recent
+                </span>
+
+                <button
+                    class="tiny-btn"
+                    id="clearHistoryBtn"
+                    title="Clear recent chats"
+                >
+                    Clear
+                </button>
+
+            </div>
+
+
+            <div
+                class="history"
+                id="chatHistory"
+            ></div>
+
+        </div>
+
+
+        <!-- Sidebar Bottom -->
+
+        <div class="sidebar-bottom">
+
+    <div class="profile-row">
+
+        <button
+            class="profile"
+            id="profileBtn"
+        >
+
+            <span
+                class="avatar"
+                id="userAvatar"
+            >
+                S
+            </span>
+
+            <span class="profile-text">
+
+                <strong id="userName">
+                    Student
+                </strong>
+
+                <small id="userPlan">
+                    Free plan
+                </small>
+
+            </span>
+
+        </button>
+
+
+        <button
+            class="settings-btn"
+            id="settingsBtn"
+            title="Settings"
+            aria-label="Settings"
+        >
+            ⚙
+        </button>
+
+    </div>
+
+ 
+
+</div>
+
+    </aside>
+
+
+    <!-- Mobile Overlay -->
+
+    <div
+        class="overlay"
+        id="sidebarOverlay"
+    ></div>
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main class="main">
+
+        <!-- Top Bar -->
+
+        <header class="topbar">
+
+            <div class="top-left">
+
+               <button
+    class="icon-btn mobile-menu"
+    id="openSidebar"
+    aria-label="Open or close sidebar"
+    title="Open or close sidebar"
+>
+    ☰
+</button>
+
+
+                <div class="mode">
+
+                    <span class="mode-logo">
+                        𝐀𝐈
+                    </span>
+
+                    <span>
+
+                        <strong>
+                            StudyMetaAI
+                        </strong>
+
+                        <small>
+                            Student mode
+                            <b>⌄</b>
+                        </small>
+
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="top-actions">
+
+                <button
+                    class="icon-btn"
+                    id="themeBtn"
+                    title="Toggle theme"
+                    aria-label="Toggle theme"
+                >
+                    ☼
+                </button>
+
+
+                <button
+                    class="icon-btn"
+                    id="copyChatBtn"
+                    title="Copy conversation"
+                    aria-label="Copy conversation"
+                >
+                    ⧉
+                </button>
+
+
+                <button
+                    class="icon-btn"
+                    id="clearBtn"
+                    title="Clear current chat"
+                    aria-label="Clear current chat"
+                >
+                    ⌫
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- =========================
+             CHAT AREA
+        ========================== -->
+
+        <section
+            class="chat-area"
+            id="chatScroll"
+        >
+
+            <div class="content">
+
+
+                <!-- Welcome -->
+
+                <section
+                    class="welcome"
+                    id="welcome"
+                >
+
+                    <div class="welcome-logo">
+                        𝐀𝐈
+                    </div>
+
+
+                    <h1>
+                        How can I help you Today?
+                    </h1>
+
+
+                    <p>
+                        Learn concepts, solve problems,
+                        write code, prepare for exams,
+                        and build projects.
+                    </p>
+
+
+                    <!-- Quick Actions -->
+
+                    <div class="suggestions">
+
+
+                        <!-- Explain -->
+
+                        <button
+                            class="suggestion"
+                            data-prompt="Explain Artificial Intelligence in simple words with a real-life example."
+                        >
+
+                            <span class="suggestion-icon">
+                                💡
+                            </span>
+
+                            <span>
+
+                             
+
+                            </span>
+
+                            <span class="arrow">
+                                →
+                            </span>
+
+                        </button>
+
+
+                        <!-- Project -->
+
+                        <button
+                            class="suggestion"
+                            data-prompt="Help me build a Python project step by step."
+                        >
+
+                            <span class="suggestion-icon">
+                                ⌘
+                            </span>
+
+                            <span>
+
+              
+
+                            </span>
+
+                            <span class="arrow">
+                                →
+                            </span>
+
+                        </button>
+
+
+                        <!-- Study Plan -->
+
+                        <button
+                            class="suggestion"
+                            data-prompt="Create a 7-day study plan for my exams."
+                        >
+
+                            <span class="suggestion-icon">
+                                ▣
+                            </span>
+
+                            <span>
+
+                                
+
+                            </span>
+
+                            <span class="arrow">
+                                →
+                            </span>
+
+                        </button>
+
+
+                        <!-- Quiz -->
+
+                        <button
+                            class="suggestion"
+                            data-prompt="Create 10 Python MCQs with answers and explanations."
+                        >
+
+                            <span class="suggestion-icon">
+                                ✦
+                            </span>
+
+                            <span>
+
+                                 
+
+                            </span>
+
+                            <span class="arrow">
+                                →
+                            </span>
+
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+                <!-- Messages -->
+
+                <div
+                    class="messages"
+                    id="messages"
+                ></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             MESSAGE COMPOSER
+        ========================== -->
+
+        <section class="composer-area">
+
+            <div class="composer-wrap">
+
+
+                <!-- Attachment -->
+
+                <div
+                    class="attachment-preview"
+                    id="attachmentPreview"
+                ></div>
+
+
+                <div class="composer">
+
+
+                    <button
+                        class="attach"
+                        id="attachBtn"
+                        title="Attach a file"
+                        aria-label="Attach a file"
+                    >
+                        ＋
+                    </button>
+
+
+                    <input
+                        type="file"
+                        id="fileInput"
+                        hidden
+                        accept=".txt,.pdf,.doc,.docx,.py,.js,.html,.css,.java,.c,.cpp,.csv,.md"
+                    >
+
+
+                    <textarea
+                        id="messageInput"
+                        rows="1"
+                        maxlength="8000"
+                        placeholder="Message StudyMetaAI..."
+                        aria-label="Message StudyMetaAI"
+                    ></textarea>
+
+
+                    <div class="composer-right">
+
+                        <span id="counter">
+                            0 / 8000
+                        </span>
+
+
+                        <button
+                            class="send"
+                            id="sendBtn"
+                            disabled
+                            title="Send message"
+                            aria-label="Send message"
+                        >
+                            ↑
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <p class="disclaimer">
+                    StudyMetaAI can make mistakes.
+                    Verify important information.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- =========================
+     MODAL
+========================== -->
+
+<div
+    class="modal-backdrop"
+    id="modalBackdrop"
+>
+
+    <div
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+    >
+
+        <button
+            class="modal-close"
+            id="modalClose"
+            aria-label="Close"
+        >
+            ×
+        </button>
+
+
+        <div class="modal-icon">
+            ✦
+        </div>
+
+
+        <h2 id="modalTitle">
+            StudyMetaAI
+        </h2>
+
+
+        <div id="modalBody"></div>
+
+    </div>
+
+</div>
+
+
+<!-- Toast -->
+
+<div
+    class="toast"
+    id="toast"
+></div>
+
+
+<!-- JavaScript -->
+
+<script
+    src="/script.js?v=4"
+    defer
+></script>
+
+</body>
+</html>
