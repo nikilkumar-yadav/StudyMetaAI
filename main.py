@@ -809,7 +809,15 @@ say that clearly.
             print(f"StudyMetaAI: searching web for: {user_message}")
 
             try:
-                search_results = list(
+              search_results = list(
+    DDGS(timeout=10).text(
+        user_message,
+        region="in-en",
+        safesearch="moderate",
+        max_results=8,
+        backend="google,brave,bing,duckduckgo,yahoo",
+    )
+)  search_results = list(
                     DDGS().text(
                         user_message,
                         region="wt-wt",
