@@ -724,8 +724,7 @@ if ($("profileBtn")) {
 
         closeModal();
 
-        window.location.href =
-          "/login";
+        window.location.href = "login.html";
 
       };
 
