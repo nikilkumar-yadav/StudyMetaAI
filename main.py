@@ -817,14 +817,7 @@ say that clearly.
         max_results=8,
         backend="google,brave,bing,duckduckgo,yahoo",
     )
-)  search_results = list(
-                    DDGS().text(
-                        user_message,
-                        region="wt-wt",
-                        safesearch="moderate",
-                        max_results=8,
-                    )
-                )
+
             except Exception as search_error:
                 print(
                     f"StudyMetaAI: DDGS live search failed: {search_error}"
